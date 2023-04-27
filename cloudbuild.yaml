@@ -3,8 +3,7 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
-  - echo "$(git log)"
-  - echo "$(git show --name-only master)"
+  - echo "$(git diff --name-only origin/master)"
   - echo "$(git show --name-only --format= $COMMIT_SHA)"
   - |
     if git diff --name-only HEAD~1 | grep -q "us/"; then

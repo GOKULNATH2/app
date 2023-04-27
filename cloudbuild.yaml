@@ -5,11 +5,11 @@ steps:
   - '-c'
   # - echo "$(git rev-parse --is-inside-work-tree)"
   - echo "$(git rev-parse HEAD~1)"
-  - |
-    if git diff --name-only HEAD~1 | grep -q "us/"; then
-      echo "The file HAS changed"
-      python app/app.py
-    else
-      echo "No, the file did not change, we shall exit"
-      exit 0
-    fi
+  # - |
+  #   if git diff --name-only HEAD~1 | grep -q "us/"; then
+  #     echo "The file HAS changed"
+  #     python app/app.py
+  #   else
+  #     echo "No, the file did not change, we shall exit"
+  #     exit 0
+  #   fi

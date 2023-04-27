@@ -4,7 +4,7 @@ steps:
   args: 
   - '-c'
   # - echo "$(git rev-parse --is-inside-work-tree)"
-  - echo "$(git rev-parse HEAD~1)"
+  - echo "$(git show --name-only)"
   # - |
   #   if git diff --name-only HEAD~1 | grep -q "us/"; then
   #     echo "The file HAS changed"

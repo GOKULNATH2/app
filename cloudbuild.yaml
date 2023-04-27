@@ -3,6 +3,7 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
+  - $(git diff --name-only HEAD)
   - |
     if git diff --name-only HEAD | grep -q "us/"; then
       echo "The file HAS changed"

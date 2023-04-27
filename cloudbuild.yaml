@@ -3,9 +3,9 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
-  - echo "$(git diff --name-only HEAD)"
+  - echo "$(git diff --name-only HEAD@{1})"
   - |
-    if git diff --name-only HEAD | grep -q "us/"; then
+    if git diff --name-only HEAD@{1} | grep -q "us/"; then
       echo "The file HAS changed"
       python app/app.py
     else

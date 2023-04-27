@@ -1,0 +1,13 @@
+steps:
+- name: python
+  entrypoint: 'bash'
+  args: 
+  - '-c'
+  - |
+    if git diff --name-only HEAD~1 | grep -q "us/"; then
+      echo "The file HAS changed"
+      python app/app.py
+    else
+      echo "No, the file did not change, we shall exit"
+      exit 0
+    fi

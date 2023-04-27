@@ -3,6 +3,7 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
+  - echo "$(git log)"
   - echo "$(git show --name-only master)"
   - echo "$(git show --name-only --format= $COMMIT_SHA)"
   - |

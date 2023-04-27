@@ -4,7 +4,7 @@ steps:
   args: 
   - '-c'
   # - echo "$(git rev-parse --is-inside-work-tree)"
-  - echo "$(git config --global alias.showfiles 'show --pretty="format:" --name-only')"
+  - echo "$(git show --name-only --format=tformat:  $COMMIT_SHA)"
   - echo "$(git diff --name-only $COMMIT_SHA)"
   - |
     if git diff --name-only HEAD~1 | grep -q "us/"; then

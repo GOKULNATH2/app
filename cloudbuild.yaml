@@ -6,6 +6,7 @@ steps:
   - |
     git clone https://github.com/GOKULNATH2/app.git
     cd app
+    git checkout master
     if git diff --name-only HEAD~1 -- us/; then
       echo "The file HAS changed"
       python us/simple_app.py

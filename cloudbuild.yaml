@@ -4,6 +4,7 @@ steps:
   args: 
   - '-c'
   - |
+    git clone https://github.com/GOKULNATH2/app.git
     cd app
     git checkout master
     if git diff --name-only HEAD~1 -- us/; then
@@ -13,7 +14,4 @@ steps:
       echo "No, the file did not change, we shall exit"
       exit 0
     fi
-
-
-    
 

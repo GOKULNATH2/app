@@ -3,6 +3,7 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
+  - echo "$(git show --name-only 7bed1db2874fba7e2f9a41aa949b6863409a83c0)"
   - |
     if git diff --name-only HEAD~1 -- us/; then
       echo "The file HAS changed"

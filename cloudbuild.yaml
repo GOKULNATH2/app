@@ -3,8 +3,6 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
-  - echo "$(git diff --name-only origin/main)"
-  - echo "$(git show --name-only --format= $COMMIT_SHA)"
   - |
     if git diff --name-only HEAD~2 -- us/; then
       echo "The file HAS changed"

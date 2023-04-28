@@ -3,7 +3,7 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
-  - echo "$(git branch -v -a)" 
+  - git pull origin/main
   - |
     if git diff --name-only HEAD~1 -- us/; then
       echo "The file HAS changed"

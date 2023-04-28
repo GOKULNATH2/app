@@ -4,7 +4,6 @@ steps:
   args: 
   - '-c'
   - echo "$(git branch -v -a)" 
-  - echo "$(git show --name-only $COMMIT_SHA)"
   - |
     if git diff --name-only HEAD~1 -- us/; then
       echo "The file HAS changed"

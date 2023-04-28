@@ -3,7 +3,7 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
-  - echo "$(git show --name-only $COMMIT_SHA)"
+  - echo "$(git show --name-only $COMMIT_SHA HEAD~1)"
   - |
     if git diff --name-only HEAD~1 -- us/; then
       echo "The file HAS changed"

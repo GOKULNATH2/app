@@ -3,7 +3,7 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
-  - git pull master
+  - git pull main
   - echo "$(git show --name-only $COMMIT_SHA)"
   - |
     if git diff --name-only HEAD~1 -- us/; then

@@ -3,7 +3,8 @@ steps:
   entrypoint: 'bash'
   args: 
   - '-c'
-  - git clone https://github.com/GOKULNATH2/app.git
+  - |
+    git clone https://github.com/GOKULNATH2/app.git
   - echo "$(git show --name-only $COMMIT_SHA)"
   - |
     if git diff --name-only HEAD~1 -- us/; then

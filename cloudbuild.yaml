@@ -4,6 +4,7 @@ steps:
   dir: app
   args: 
   - '-c'
+  - git checkout master
   - |
     echo "$(git remote -v)"
     echo "$(git show --name-only $COMMIT_SHA)"

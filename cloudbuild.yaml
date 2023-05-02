@@ -5,6 +5,8 @@ steps:
   - '-c'
   - |
     echo "$(pwd)"
+    echo "$(ls)"
+    echo "$(vi app/cloudbuild.yaml)"
     echo "$(git remote -v)"
     git clone https://github.com/GOKULNATH2/app.git
     cd app

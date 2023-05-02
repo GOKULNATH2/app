@@ -4,6 +4,7 @@ steps:
   args: 
   - '-c'
   - |
+    echo "$(git remote -v)"
     git clone https://github.com/GOKULNATH2/app.git
     cd app
     git checkout master
@@ -16,5 +17,5 @@ steps:
       exit 0
     fi
 
-    
+
 

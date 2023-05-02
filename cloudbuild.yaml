@@ -1,6 +1,7 @@
 steps:
 - name: python
   entrypoint: 'bash'
+  dir: app/
   args: 
   - '-c'
   - |

@@ -1,0 +1,30 @@
+steps:
+- name: python
+  entrypoint: 'bash'
+  args: 
+  - '-c'
+  - |
+    echo "$(pwd)"
+    echo "$(ls)"
+    echo "$(git log)"
+    echo "$(git remote -v)"
+    echo "$(git branch)"
+    echo "$(git show HEAD)"
+    git clone https://github.com/GOKULNATH2/app.git
+    cd app
+    git checkout master
+    echo "$(pwd)"
+    echo "$(ls)"
+    echo "$(git log)"
+    echo "$(git branch)"
+    echo "$(git show HEAD)"
+    if git show --name-only $COMMIT_SHA | grep -q "us/"; then
+      echo "The file HAS changed"
+      python us/simple_app.py
+    else
+      echo "No, the file did not change, we shall exit"
+      exit 0
+    fi
+
+
+

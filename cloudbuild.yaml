@@ -5,6 +5,7 @@ steps:
   - '-c'
   - |
     echo "hi"
+    echo "hello"
 
 
 

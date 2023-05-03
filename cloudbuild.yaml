@@ -4,9 +4,11 @@ steps:
   args: 
   - '-c'
   - |
-    echo "hi"
-    echo "hello"
-    echo "$(pwd)"
+    if [[ -n $(git diff --name-only $COMMIT_SHA HEAD -- us/simple_ap.py) ]]; then
+      echo "Changes detected"
+    else
+      echo "No changes detected"
+    fi
 
 
 

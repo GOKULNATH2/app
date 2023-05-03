@@ -8,12 +8,15 @@ steps:
     echo "$(ls)"
     echo "$(git log)"
     echo "$(git remote -v)"
+    echo "$(git branch)"
+    echo "$(git show --name-only $COMMIT_SHA)"
     git clone https://github.com/GOKULNATH2/app.git
     cd app
     git checkout master
     echo "$(pwd)"
     echo "$(ls)"
     echo "$(git log)"
+    echo "$(git branch)"
     echo "$(git show --name-only $COMMIT_SHA)"
     if git show --name-only $COMMIT_SHA | grep -q "us/"; then
       echo "The file HAS changed"
